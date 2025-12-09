@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class LandingActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,13 +24,20 @@ public class LandingActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button startButton = findViewById(R.id.btn_get_started);
-        startButton.setOnClickListener(new View.OnClickListener() {
+        Button btn = findViewById(R.id.btn_get_started);
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LandingActivity.this, MainActivity.class);
-                startActivity(intent);
+                toHome();
             }
         });
+    }
+
+
+    public void toHome() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

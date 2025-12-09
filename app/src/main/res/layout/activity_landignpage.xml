@@ -37,7 +37,6 @@
             android:layout_marginBottom="8dp"
             android:text="Apprenez plus intelligemment"
             android:textColor="@color/text_secondary"
-_secondary"
             android:textSize="16sp" />
 
         <TextView
@@ -59,7 +58,8 @@ _secondary"
             android:text="COMMENCER"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:backgroundTint="#020A42" />
+            app:backgroundTint="#020A42"
+            />
     </LinearLayout>
 
 
