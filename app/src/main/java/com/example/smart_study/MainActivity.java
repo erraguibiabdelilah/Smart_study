@@ -10,25 +10,35 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.smart_study.fragments.CoursesFragment;
+import com.example.smart_study.fragments.LibraryFragment;
+import com.example.smart_study.fragments.SettingsFragment;
+import com.example.smart_study.fragments.flashCards.FlashcardFragment;
 import com.example.smart_study.fragments.HomeFragment;
 import com.example.smart_study.fragments.QcmFragment;
-import com.example.smart_study.fragments.SettingsFragment;
+import com.example.smart_study.fragments.flashCards.UploadFileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
+
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(this);
+
+        // Appliquer le style personnalisé
+         // Taille de l'icône en pixels
+        bottomNavigationView.setElevation(0); // Enlever l'ombre par défaut
 
         // Load the default fragment
         if (savedInstanceState == null) {
             loadFragment(new HomeFragment());
+            bottomNavigationView.setSelectedItemId(R.id.nav_home);
         }
     }
 
@@ -36,12 +46,11 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
         int itemId = item.getItemId();
+
         if (itemId == R.id.nav_home) {
             fragment = new HomeFragment();
         } else if (itemId == R.id.nav_courses) {
-            fragment = new CoursesFragment();
-        } else if (itemId == R.id.nav_qcm) {
-            fragment = new QcmFragment();
+            fragment = new LibraryFragment();
         } else if (itemId == R.id.nav_settings) {
             fragment = new SettingsFragment();
         }

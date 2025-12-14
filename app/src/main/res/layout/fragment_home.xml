@@ -161,6 +161,7 @@
                     android:foreground="?attr/selectableItemBackground">
 
                     <LinearLayout
+                        android:id="@+id/cours"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -203,6 +204,7 @@
                     android:foreground="?attr/selectableItemBackground">
 
                     <LinearLayout
+                        android:id="@+id/resume"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -257,6 +259,7 @@
                     android:foreground="?attr/selectableItemBackground">
 
                     <LinearLayout
+                        android:id="@+id/qcm"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
@@ -300,6 +303,7 @@
                     android:foreground="?attr/selectableItemBackground">
 
                     <LinearLayout
+                        android:id="@+id/flashcard"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
