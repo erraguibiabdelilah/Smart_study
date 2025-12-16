@@ -74,7 +74,7 @@ public class FlashCardApiService {
 
     private static final String ENDPOINT = "https://models.inference.ai.azure.com/chat/completions";
     private static final String MODEL = "Grok-3-Mini";
-    private static final String GITHUB_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxx";
+    private static final String GITHUB_TOKEN = "xxxxxxxxxxxx";
 
     private final OkHttpClient client = new OkHttpClient.Builder()
             .connectTimeout(60, TimeUnit.SECONDS)

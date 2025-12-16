@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fond"
     android:padding="16dp">
 
     <!-- Titre et indicateur -->
@@ -176,7 +177,9 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginEnd="8dp"
-            android:backgroundTint="#041464"
+            app:backgroundTint="@null"
+            app:rippleColor="@null"
+            android:background="@drawable/button_cancel_exam"
             android:textColor="@android:color/white"/>
 
         <Button
@@ -188,7 +191,9 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:layout_marginStart="8dp"
-            android:backgroundTint="#046414"
+            app:backgroundTint="@null"
+            app:rippleColor="@null"
+            android:background="@drawable/button_start_exam"
             android:textColor="@android:color/white"/>
 
     </LinearLayout>

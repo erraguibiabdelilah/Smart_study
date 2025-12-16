@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
-    android:background="#F5F5F5">
+    android:background="@color/fond">
 
     <!-- Titre -->
     <TextView

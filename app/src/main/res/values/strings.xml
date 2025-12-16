@@ -8,4 +8,14 @@
     <string name="qcm">QCM</string>
     <string name="settings">Settings</string>
     <string name="library">Library</string>
+
+    <!-- ExamesFragment Strings -->
+    <string name="no_exam_questions_available">Aucune question de examen disponible</string>
+    <string name="question_header">Question %1$d / %2$d</string>
+    <string name="score_percentage">%.1f%%</string>
+    <string name="result_excellent">🎉 Excellent ! Vous maîtrisez le sujet !</string>
+    <string name="result_good">👍 Bien ! Continuez vos efforts !</string>
+    <string name="result_fair">📚 Peut mieux faire. Révisez encore !</string>
+    <string name="result_poor">💪 Courage ! Révisez et réessayez !</string>
+    <string name="result_details">%1$s\n\nRésultats : %2$d / %3$d questions correctes</string>
 </resources>

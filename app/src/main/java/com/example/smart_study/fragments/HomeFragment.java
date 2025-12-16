@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.smart_study.R;
+import com.example.smart_study.fragments.exames.ExamesFragment;
+import com.example.smart_study.fragments.exames.UplodeFileExam;
 import com.example.smart_study.fragments.flashCards.UploadFileFragment;
 
 public class HomeFragment extends Fragment {
@@ -29,6 +31,7 @@ public class HomeFragment extends Fragment {
         LinearLayout cours = view.findViewById(R.id.cours);
         LinearLayout qcm = view.findViewById(R.id.qcm);
         LinearLayout resume = view.findViewById(R.id.resume);
+        LinearLayout exam = view.findViewById(R.id.exam);
 
         flashCard.setOnClickListener(v -> {
             // Navigation vers UploadFileFragment
@@ -68,6 +71,15 @@ public class HomeFragment extends Fragment {
             requireActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, resumeFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
+        exam.setOnClickListener(v -> {
+            // Navigation vers c
+            UplodeFileExam examesFragment = new UplodeFileExam();
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, examesFragment)
                     .addToBackStack(null)
                     .commit();
         });

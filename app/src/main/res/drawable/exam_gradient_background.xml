@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- ========================================== -->
+    <!-- 1. res/drawable/exam_gradient_background.xml -->
+    <!-- ========================================== -->
+
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <gradient
+            android:angle="135"
+            android:startColor="#F6E5FF"
+            android:centerColor="#F7F1FD"
+            android:endColor="#FFFFFF"
+            android:type="linear"/>
+    </shape>
+
+
+    <!-- ========================================== -->
+    <!-- 2. res/drawable/button_next.xml -->
+    <!-- ========================================== -->
+
+
+
+    <!-- ========================================== -->
+    <!-- 3. res/drawable/button_previous.xml -->
+    <!-- ========================================== -->
+
+
+
+    <!-- ========================================== -->
+    <!-- 4. res/drawable/ -->
+    <!-- ========================================== -->
+
+
+    <!-- ========================================== -->
+    <!-- 5. res/drawable/button_retry.xml -->
+    <!-- ========================================== -->
+
+
+
+    <!-- ========================================== -->
+    <!-- 6. res/drawable/button_back.xml -->
+    <!-- ========================================== -->
+
+
+
+    <!-- ========================================== -->
+    <!-- 7. res/drawable/ (OPTIONNEL) -->
+    <!-- Pour personnaliser l'apparence des RadioButtons -->
+    <!-- ========================================== -->
+
+
+    <!-- ========================================== -->
+    <!-- INSTRUCTIONS D'UTILISATION -->
+    <!-- ========================================== -->
+
+    <!--
+    CRÉEZ CES FICHIERS DANS VOTRE PROJET :
+
+    1. exam_gradient_background.xml → res/drawable/
+    2. button_next.xml → res/drawable/
+    3. button_previous.xml → res/drawable/
+    4. button_submit.xml → res/drawable/
+    5. button_retry.xml → res/drawable/
+    6. button_back.xml → res/drawable/
+    7. radio_button_custom.xml → res/drawable/ (optionnel)
+
+    PALETTE DE COULEURS BLEUES UTILISÉES :
+    - #1E3A8A : Bleu foncé (Headers)
+    - #2563EB : Bleu primary (Bouton Next)
+    - #3B82F6 : Bleu medium (Bouton Retry)
+    - #60A5FA : Bleu clair (Bouton Previous)
+    - #93C5FD : Bleu très clair (Background gradient)
+    - #BFDBFE : Bleu pastel (Background gradient)
+    - #DBEAFE : Bleu ultra clair (Background gradient)
+
+    Pour utiliser le RadioButton personnalisé, ajoutez dans vos RadioButtons :
+    android:button="@drawable/radio_button_custom"
+    -->
+</selector>

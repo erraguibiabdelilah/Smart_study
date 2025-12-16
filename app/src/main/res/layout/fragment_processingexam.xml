@@ -8,7 +8,7 @@
 
     <!-- Titre -->
     <TextView
-        android:id="@+id/titleText"
+        android:id="@+id/titleText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -20,11 +20,11 @@
 
     <!-- Barre de progression -->
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="12dp"
-        android:layout_below="@id/titleText"
+        android:layout_below="@id/titleText1"
         android:layout_marginTop="40dp"
         android:max="100"
         android:progress="0"
@@ -32,10 +32,10 @@
 
     <!-- Pourcentage -->
     <TextView
-        android:id="@+id/percentageText"
+        android:id="@+id/percentageText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/progressBar"
+        android:layout_below="@id/progressBar1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="0%"
@@ -45,24 +45,24 @@
 
     <!-- Status text avec icône -->
     <LinearLayout
-        android:id="@+id/statusLayout"
+        android:id="@+id/statusLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/percentageText"
+        android:layout_below="@id/percentageText1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/sparkleIcon"
+            android:id="@+id/sparkleIcon1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="✨"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/statusText"
+            android:id="@+id/statusText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -75,7 +75,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/statusLayout"
+        android:layout_below="@id/statusLayout1"
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -94,7 +94,7 @@
                 android:layout_height="56dp">
 
                 <View
-                    android:id="@+id/step1Circle"
+                    android:id="@+id/step1Circle1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/ic_cercle" />
@@ -129,7 +129,7 @@
                 android:layout_height="56dp">
 
                 <View
-                    android:id="@+id/step2Circle"
+                    android:id="@+id/step2Circle1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/ic_cercle" />
@@ -164,7 +164,7 @@
                 android:layout_height="56dp">
 
                 <View
-                    android:id="@+id/step3Circle"
+                    android:id="@+id/step3Circle1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/ic_cercle" />
