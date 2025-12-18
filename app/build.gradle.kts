@@ -63,6 +63,14 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
 
+    // Room Database
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    
+    // Gson pour converters
+    implementation("com.google.code.gson:gson:2.10.1")
+
     // Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

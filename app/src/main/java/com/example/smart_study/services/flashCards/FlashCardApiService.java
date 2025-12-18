@@ -41,10 +41,10 @@ public class FlashCardApiService {
 
     // Classe pour configurer la génération
     public static class FlashCardConfig {
-        private int maxQuestionWords = 20;  // Nombre max de mots pour la question
-        private int maxAnswerWords = 40;    // Nombre max de mots pour la réponse
-        private int numberOfCards = 15;       // Nombre de flashcards à générer
-        private double temperature = 0.9;    // Créativité (0.2-1.5)
+        private int maxQuestionWords = 20;
+        private int maxAnswerWords = 40;
+        private int numberOfCards = 15;
+        private double temperature = 0.9;
 
         public FlashCardConfig setMaxQuestionWords(int words) {
             this.maxQuestionWords = words;
@@ -73,13 +73,13 @@ public class FlashCardApiService {
     }
 
     private static final String ENDPOINT = "https://models.inference.ai.azure.com/chat/completions";
-    private static final String MODEL = "Grok-3-Mini";
-    private static final String GITHUB_TOKEN = "xxxxxxxxxxxx";
+    private static final String MODEL = "grok-3-mini";
+    private static final String GITHUB_TOKEN = "xxxxxx";
 
     private final OkHttpClient client = new OkHttpClient.Builder()
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(100, TimeUnit.SECONDS)
+            .readTimeout(100, TimeUnit.SECONDS)
+            .writeTimeout(100, TimeUnit.SECONDS)
             .build();
 
     /**
