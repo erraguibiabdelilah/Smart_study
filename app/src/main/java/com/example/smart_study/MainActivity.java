@@ -1,6 +1,5 @@
 package com.example.smart_study;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -10,13 +9,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.smart_study.fragments.CoursesFragment;
 import com.example.smart_study.fragments.LibraryFragment;
 import com.example.smart_study.fragments.SettingsFragment;
-import com.example.smart_study.fragments.flashCards.FlashcardFragment;
 import com.example.smart_study.fragments.HomeFragment;
-import com.example.smart_study.fragments.QcmFragment;
-import com.example.smart_study.fragments.flashCards.UploadFileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -29,16 +24,13 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(this);
+        
+        // Supprimer l'ombre par défaut pour un look plus plat et propre
+        bottomNavigationView.setElevation(0); 
 
-        // Appliquer le style personnalisé
-         // Taille de l'icône en pixels
-        bottomNavigationView.setElevation(0); // Enlever l'ombre par défaut
-
-        // Load the default fragment
+        // Charger le fragment par défaut
         if (savedInstanceState == null) {
             loadFragment(new HomeFragment());
             bottomNavigationView.setSelectedItemId(R.id.nav_home);
@@ -68,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        // Pas d'animations personnalisées, transition standard immédiate
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
     }

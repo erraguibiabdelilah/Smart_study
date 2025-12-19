@@ -73,15 +73,13 @@ public class FlashCardApiService {
     }
 
     private static final String ENDPOINT = "https://models.inference.ai.azure.com/chat/completions";
-    private static final String MODEL = "grok-3-mini";
+    private static final String MODEL = "gpt-4.1";
     private static final String GITHUB_TOKEN = "xxxxxx";
-
     private final OkHttpClient client = new OkHttpClient.Builder()
             .connectTimeout(100, TimeUnit.SECONDS)
             .readTimeout(100, TimeUnit.SECONDS)
             .writeTimeout(100, TimeUnit.SECONDS)
             .build();
-
     /**
      * Génère des flashcards à partir d'un texte avec configuration personnalisée
      * @param text Le texte source pour générer les flashcards

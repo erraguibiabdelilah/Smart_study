@@ -59,11 +59,12 @@
                 android:layout_marginBottom="40dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="3dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
 
                 app:cardBackgroundColor="#263A85">
 
                 <LinearLayout
+                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
@@ -83,16 +84,16 @@
                             android:layout_height="match_parent"
                             android:indeterminate="false"
                             android:max="100"
-                            android:progress="75"
-                            android:progressDrawable="@drawable/progress_cercle"
-                            android:backgroundTint="@color/white"
+                            android:progress="0"
+                            android:progressDrawable="@drawable/circular_progress_bar"
                             />
 
                         <TextView
+                            android:id="@+id/tv_progress_percentage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
-                            android:text="75%"
+                            android:text="0%"
                             android:textColor="@android:color/white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -107,6 +108,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_progress_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="4dp"
@@ -116,11 +118,12 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tv_weekly_stats"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:alpha="0.95"
                             android:lineSpacingExtra="2dp"
-                            android:text="22 QCM réussis\ncette semaine."
+                            android:text="-- examens réussis\ncette semaine."
                             android:textColor="@android:color/white"
                             android:textSize="12sp" />
 

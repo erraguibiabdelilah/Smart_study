@@ -36,7 +36,7 @@ public class ExamApiService {
 
     private static final String ENDPOINT = "https://models.inference.ai.azure.com/chat/completions";
     private static final String MODEL = "gpt-4.1";
-    private static final String GITHUB_TOKEN = "xxxxxxx"; // Remplacez par votre token
+    private static final String GITHUB_TOKEN = "xxxxx"; // Remplacez par votre token
 
     private final OkHttpClient client = new OkHttpClient.Builder()
             .connectTimeout(100, TimeUnit.SECONDS)

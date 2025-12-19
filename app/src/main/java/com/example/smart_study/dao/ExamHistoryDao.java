@@ -52,4 +52,12 @@ public interface ExamHistoryDao {
     // Calculer la moyenne des scores
     @Query("SELECT AVG(scorePercentage) FROM exam_history")
     double getAverageScore();
+    
+    // Calculer la moyenne des scores sur les 7 derniers jours (pour les stats de la semaine)
+    @Query("SELECT AVG(scorePercentage) FROM exam_history WHERE completedDate >= :oneWeekAgo")
+    double getWeeklyAverageScore(long oneWeekAgo);
+
+    // Compter les examens réussis (score >= 50%) sur les 7 derniers jours
+    @Query("SELECT COUNT(*) FROM exam_history WHERE completedDate >= :oneWeekAgo AND scorePercentage >= 50")
+    int getWeeklySuccessfulExams(long oneWeekAgo);
 }

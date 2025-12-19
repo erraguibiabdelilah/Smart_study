@@ -14,6 +14,8 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.smart_study.R;
+import com.example.smart_study.fragments.HomeFragment;
+import com.example.smart_study.fragments.ResumeFragment;
 import com.example.smart_study.services.flashCards.FlashCardApiService;
 
 import java.util.List;
@@ -31,6 +33,8 @@ public class FlashcardFragment extends Fragment {
     // Boutons de navigation
     private Button btnPrevious;
     private Button btnNext;
+
+    private View backbtn;
 
     // Data
     private List<FlashCardApiService.FlashCard> flashCardsList;
@@ -54,6 +58,7 @@ public class FlashcardFragment extends Fragment {
         cardCounter = view.findViewById(R.id.count);
         btnPrevious = view.findViewById(R.id.btn_previous);
         btnNext = view.findViewById(R.id.btn_next);
+        backbtn=view.findViewById(R.id.btnBack);
 
         // Préparer les cartes pour l'animation 3D
         float scale = getResources().getDisplayMetrics().density;
@@ -74,6 +79,8 @@ public class FlashcardFragment extends Fragment {
         // Charger les données des flashcards et mettre à jour les boutons
         loadFlashCardsFromArguments();
         updateNavigationButtons();
+
+        backbtn.setOnClickListener(v->goBackToUpload());
     }
 
     private void loadFlashCardsFromArguments() {
@@ -183,5 +190,15 @@ public class FlashcardFragment extends Fragment {
         if (getContext() != null) {
             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void goBackToUpload(){
+        UploadFileFragment uploadFileFragment = new UploadFileFragment();
+        requireActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, uploadFileFragment)
+                // Pas de addToBackStack si vous voulez "revenir en arrière" sans empiler
+                // mais si vous voulez simuler un retour normal, utilisez popBackStack si possible
+                .commit();
     }
 }

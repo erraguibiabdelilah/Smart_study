@@ -154,7 +154,7 @@ public class ExamDetailFragment extends Fragment {
             if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS)
                     != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, NOTIFICATION_PERMISSION_REQUEST_CODE);
-                return; // On attend la réponse pour afficher la notif
+                // On continue quand même le téléchargement même sans notif
             }
         }
 
@@ -167,7 +167,7 @@ public class ExamDetailFragment extends Fragment {
         if (requestCode == PERMISSION_REQUEST_CODE) {
             // Permission de stockage (Android < 10)
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                checkPermissionAndDownload(); // On revérifie, au cas où il faut aussi la notif
+                generateAndDownloadPdf(); // On a la permission, on génère
             } else {
                 Toast.makeText(requireContext(), "Permission de stockage refusée.", Toast.LENGTH_SHORT).show();
             }
@@ -436,6 +436,7 @@ public class ExamDetailFragment extends Fragment {
         @NonNull
         @Override
         public QuestionsDetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            // CORRECTION: Utilisation de R.layout.item_exam_detail_question car le fichier XML ne se termine pas par .xml dans R.layout
             View view = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_exam_detail_question, parent, false);
             return new QuestionsDetailViewHolder(view);

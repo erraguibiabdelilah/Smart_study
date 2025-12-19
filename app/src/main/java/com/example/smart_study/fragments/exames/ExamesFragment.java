@@ -1,5 +1,4 @@
 package com.example.smart_study.fragments.exames;
-
 import android.Manifest;
 import android.animation.ValueAnimator;
 import android.app.NotificationChannel;
@@ -73,7 +72,6 @@ public class ExamesFragment extends Fragment {
 
     private List<ExamQuestionModel> examQuestions;
     private int currentQuestionIndex = 0;
-
     // Timer
     private CountDownTimer examTimer;
     private long totalTimeInMillis;
@@ -442,30 +440,30 @@ public class ExamesFragment extends Fragment {
         String emoji;
         if (scorePercentage >= 80) {
             resultMessage = "Excellent ! Vous maîtrisez le sujet !";
-            emoji = "🎉";
+            emoji = "";
         } else if (scorePercentage >= 60) {
             resultMessage = "Bon travail ! Continuez vos efforts !";
-            emoji = "👍";
+            emoji = "";
         } else if (scorePercentage >= 40) {
             resultMessage = "Passable. Il faut réviser davantage.";
-            emoji = "📚";
+            emoji = "";
         } else {
             resultMessage = "Vous devez améliorer vos connaissances.";
-            emoji = "💪";
+            emoji = "";
         }
 
         StringBuilder detailsBuilder = new StringBuilder();
         detailsBuilder.append(emoji).append(" ").append(resultMessage).append("\n\n");
-        detailsBuilder.append("📊 Résultats : ").append(correctAnswersCount).append(" / ").append(totalQuestions).append(" questions correctes\n\n");
+        detailsBuilder.append("Résultats : ").append(correctAnswersCount).append(" / ").append(totalQuestions).append(" questions correctes\n\n");
 
         if (unansweredQuestions > 0) {
-            detailsBuilder.append("⚠️ Questions non répondues : ").append(unansweredQuestions).append("\n\n");
+            detailsBuilder.append(" Questions non répondues : ").append(unansweredQuestions).append("\n\n");
         }
 
-        detailsBuilder.append("⏱️ Temps utilisé : ").append(timeUsedFormatted);
+        detailsBuilder.append(" Temps utilisé : ").append(timeUsedFormatted);
 
         if (timeRemainingInMillis <= 0) {
-            detailsBuilder.append("\n\n⏰ Examen terminé par expiration du temps");
+            detailsBuilder.append("\n\n Examen terminé par expiration du temps");
         }
 
         resultDetailsText.setText(detailsBuilder.toString());
@@ -552,7 +550,6 @@ public class ExamesFragment extends Fragment {
             }
         }
     }
-
     // ==================== GÉNÉRATION DU PDF ====================
 
     private void generateAndDownloadPdf() {
@@ -803,7 +800,6 @@ public class ExamesFragment extends Fragment {
     }
 
     // ==================== AUTRES MÉTHODES ====================
-
     private void resetExam() {
         for (ExamQuestionModel question : examQuestions) {
             question.setUserSelectedAnswer(-1);
@@ -837,13 +833,12 @@ public class ExamesFragment extends Fragment {
         super.onDestroyView();
         stopTimer();
     }
-
     @Override
     public void onPause() {
         super.onPause();
         if (isTimerRunning && !examCompleted) {
             stopTimer();
-            Toast.makeText(requireContext(), "⚠️ Timer arrêté - Examen en pause", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), " Timer arrêté - Examen en pause", Toast.LENGTH_SHORT).show();
         }
     }
 

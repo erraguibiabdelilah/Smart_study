@@ -23,8 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-
-public class ExamHistoriyFragment extends Fragment {
+public class ExamHistoryFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private View emptyView;
