@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with Type and Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvGenerationType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cours"
+                android:textColor="@color/primary_dark"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvGenerationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01/01/2024 - 10:00"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvCourseTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titre du cours généré"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Subject -->
+        <TextView
+            android:id="@+id/tvCourseSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mathématiques"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Content Preview -->
+        <TextView
+            android:id="@+id/tvContentPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aperçu du contenu généré..."
+            android:textColor="#444444"
+            android:textSize="13sp"
+            android:layout_marginBottom="8dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- Footer with Status and Details -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Status Badge -->
+            <TextView
+                android:id="@+id/tvStatusBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Réussi"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/rounded_bg_success"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Generation Time -->
+            <TextView
+                android:id="@+id/tvGenerationTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.5s"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Source Size (for courses/resumes) -->
+            <TextView
+                android:id="@+id/tvSourceSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1500 chars"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Quiz Questions Count (for quizzes) -->
+            <TextView
+                android:id="@+id/tvQuizCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 questions"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <!-- Flashcard Count (for flashcards) -->
+            <TextView
+                android:id="@+id/tvFlashcardCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 cartes"
+                android:textColor="#999999"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

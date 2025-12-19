@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_examuploadfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="@color/fond">
+
+    <!-- Titre -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload cours"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="30dp" />
+
+    <!-- Card Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="50dp"
+        android:elevation="10dp">
+
+        <!-- Icône Upload -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_upload"
+            android:layout_marginBottom="20dp"
+            app:tint="#2196F3" />
+
+        <!-- Texte d'instruction -->
+        <TextView
+            android:id="@+id/fileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Aucun fichier sélectionné"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Bouton Choisir Fichier -->
+        <Button
+            android:id="@+id/btnSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choisir un cour .pdf"
+            android:textColor="#FFFFFF"
+            android:background="@color/primary_dark"
+            android:padding="12dp"
+            android:layout_marginBottom="15dp"
+            android:textAllCaps="false"/>
+
+
+        <ProgressBar
+            android:id="@+id/ProgressBarre"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            android:progressTint="#2196F3"/>
+
+        <!-- Message de statut -->
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:textSize="12sp"
+            android:textColor="#4CAF50"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!-- Information -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Formats acceptés: .pdf"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/resultas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:layout_marginTop="20dp"/>
+
+
+</LinearLayout>

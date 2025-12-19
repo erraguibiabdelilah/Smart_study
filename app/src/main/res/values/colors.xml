@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_dark">#010528</color>
+    <color name="accent_blue">#64B5F6</color>
+    <color name="dark">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="fond">#CDFFFFFF</color>
+
+    <!-- Success & Warning Colors -->
+    <color name="success_green">#10B981</color>
+    <color name="warning_orange">#F59E0B</color>
+
+    <!-- Background Colors -->
+    <color name="background_primary">#B7D4D5</color>
+    <color name="background_card">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="radio_button_text_color">#02103A</color>
+
+    <!-- Additional Colors -->
+    <color name="purple_accent">#9333EA</color>
+    <color name="red_error">#EF4444</color>
+    <color name="bottom_nav_color">#603D8A</color>
+
+</resources>

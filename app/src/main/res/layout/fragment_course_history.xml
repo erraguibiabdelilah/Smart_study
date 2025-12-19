@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fond">
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_right"
+            android:rotation="180"
+            app:tint="@color/primary_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tvHistoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historique des Génération"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_dark"
+            android:layout_toEndOf="@id/btnBack"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"/>
+
+    </RelativeLayout>
+
+    <!-- Content Area -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp">
+
+        <!-- Filter Tabs -->
+        <HorizontalScrollView
+            android:id="@+id/filterScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <Button
+                    android:id="@+id/btnFilterAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Tous"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/button_start_exam"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="80dp" />
+
+                <Button
+                    android:id="@+id/btnFilterCourses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Cours"
+                    android:textSize="12sp"
+                    android:textColor="#660363"
+                    android:background="@drawable/button_secondary_exam"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="80dp" />
+
+                <Button
+                    android:id="@+id/btnFilterResumes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Résumés"
+                    android:textSize="12sp"
+                    android:textColor="#660363"
+                    android:background="@drawable/button_secondary_exam"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="80dp" />
+
+                <Button
+                    android:id="@+id/btnFilterFlashcards"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Flashcards"
+                    android:textSize="12sp"
+                    android:textColor="#660363"
+                    android:background="@drawable/button_secondary_exam"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="80dp" />
+
+                <Button
+                    android:id="@+id/btnFilterQuizzes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Quiz"
+                    android:textSize="12sp"
+                    android:textColor="#660363"
+                    android:background="@drawable/button_secondary_exam"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="80dp" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/courseHistoryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/filterScrollView"
+            android:background="@color/white" />
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/emptyStateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/filterScrollView"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_book"
+                app:tint="#CCCCCC"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aucun contenu généré"
+                android:textColor="#999999"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vos générations apparaîtront ici"
+                android:textColor="#CCCCCC"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Loading Progress -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
