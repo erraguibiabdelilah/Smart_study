@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF8F7"
-    tools:context=".fragments.SettingsFragment">
+    tools:context=".SettingsActivity">
 
     <!-- Avatar Section -->
     <androidx.constraintlayout.widget.ConstraintLayout
