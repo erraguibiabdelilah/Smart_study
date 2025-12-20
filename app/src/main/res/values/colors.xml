@@ -16,6 +16,10 @@
     <color name="background_primary">#B7D4D5</color>
     <color name="background_card">#FFFFFF</color>
 
+    <!-- Add these -->
+    <color name="secondary">#FF9800</color> <!-- orange example -->
+    <color name="secondary_dark">#F57C00</color> <!-- darker orange example -->
+
     <!-- Text Colors -->
     <color name="text_primary">#1E293B</color>
     <color name="text_secondary">#64748B</color>
