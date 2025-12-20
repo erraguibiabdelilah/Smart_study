@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +36,7 @@
                     android:text="Bonjour, User"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#1E293B"/>
+                    android:textColor="#1E293B" />
 
                 <ImageView
                     android:id="@+id/btn_search"
@@ -47,28 +46,23 @@
                     android:padding="8dp"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:tint="@color/dark" />
-
             </LinearLayout>
-
-
 
             <!-- Progress Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="133dp"
                 android:layout_marginBottom="40dp"
+                android:layout_marginTop="20dp"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="3dp"
-                android:layout_marginTop="20dp"
-
                 app:cardBackgroundColor="#263A85">
 
                 <LinearLayout
-                    
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:orientation="horizontal"
+                    android:gravity="center_vertical"
                     android:padding="20dp">
 
                     <!-- Progress Circle -->
@@ -85,8 +79,7 @@
                             android:indeterminate="false"
                             android:max="100"
                             android:progress="0"
-                            android:progressDrawable="@drawable/circular_progress_bar"
-                            />
+                            android:progressDrawable="@drawable/circular_progress_bar" />
 
                         <TextView
                             android:id="@+id/tv_progress_percentage"
@@ -97,7 +90,6 @@
                             android:textColor="@android:color/white"
                             android:textSize="20sp"
                             android:textStyle="bold" />
-
                     </RelativeLayout>
 
                     <!-- Progress Text -->
@@ -126,11 +118,8 @@
                             android:text="-- examens réussis\ncette semaine."
                             android:textColor="@android:color/white"
                             android:textSize="12sp" />
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <!-- Quick Access Section -->
@@ -141,7 +130,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#1E293B"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp" />
 
             <!-- Quick Access Row -->
             <LinearLayout
@@ -167,8 +156,8 @@
                         android:id="@+id/cours"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
                         android:orientation="vertical"
+                        android:gravity="center"
                         android:padding="12dp"
                         app:cardCornerRadius="40dp">
 
@@ -188,9 +177,7 @@
                             android:textColor="@android:color/white"
                             android:textSize="11sp"
                             android:textStyle="bold" />
-
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
 
                 <!-- Faire Résumé -->
@@ -213,7 +200,7 @@
                         android:orientation="vertical"
                         android:gravity="center"
                         android:padding="12dp"
-                        app:cardCornerRadius="40dp">>
+                        app:cardCornerRadius="40dp">
 
                         <ImageView
                             android:layout_width="35dp"
@@ -230,16 +217,10 @@
                             android:textStyle="bold"
                             android:textColor="@android:color/white"
                             android:textAlignment="center"
-                            android:gravity="center"/>
-
+                            android:gravity="center" />
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
-
-
-
             </LinearLayout>
-
 
             <!-- Continue Row -->
             <LinearLayout
@@ -268,14 +249,14 @@
                         android:orientation="vertical"
                         android:gravity="center"
                         android:padding="12dp"
-                        app:cardCornerRadius="40dp">>
+                        app:cardCornerRadius="40dp">
 
                         <ImageView
                             android:layout_width="35dp"
                             android:layout_height="35dp"
+                            android:layout_marginBottom="8dp"
                             android:src="@drawable/ic_qcm"
                             android:tint="@android:color/white"
-                            android:layout_marginBottom="8dp"
                             tools:ignore="UseAppTint" />
 
                         <TextView
@@ -286,13 +267,11 @@
                             android:textStyle="bold"
                             android:textColor="@android:color/white"
                             android:textAlignment="center"
-                            android:gravity="center"/>
-
+                            android:gravity="center" />
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
 
-                <!-- Faire Résumé -->
+                <!-- Flashcards -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_continue_resume"
                     android:layout_width="0dp"
@@ -329,18 +308,13 @@
                             android:textStyle="bold"
                             android:textColor="@android:color/white"
                             android:textAlignment="center"
-                            android:gravity="center"/>
-
+                            android:gravity="center" />
                     </LinearLayout>
-
                 </androidx.cardview.widget.CardView>
-
             </LinearLayout>
-
 
             <!-- Activity Item -->
             <androidx.cardview.widget.CardView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
@@ -364,7 +338,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
                             android:layout_marginBottom="4dp"
                             android:text="Exam Simulation"
                             android:textColor="#FFFFFF"
@@ -376,8 +349,7 @@
                             android:layout_height="wrap_content"
                             android:text="QCM, questions ouvertes et correction automatique"
                             android:textSize="11sp"
-                            android:textColor="#C7C7C7"/>
-
+                            android:textColor="#C7C7C7" />
                     </LinearLayout>
 
                     <ImageView
@@ -386,15 +358,8 @@
                         android:layout_marginBottom="8dp"
                         android:src="@drawable/exam"
                         app:tint="@android:color/white" />
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-
     </ScrollView>
-
-
-
 </RelativeLayout>
