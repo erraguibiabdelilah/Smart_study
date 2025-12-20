@@ -47,15 +47,17 @@ public class LibraryFragment extends Fragment {
         }
         */
 
-        // Navigation pour "Résumés de Cours" (à implémenter si la page existe)
-        /*
+        // Navigation pour "Résumés de Cours"
         if (resumeLayout != null) {
             resumeLayout.setOnClickListener(v -> {
-                // Fragment resumeHistory = new ResumeHistoryFragment();
-                // navigateTo(resumeHistory);
+                ResumeHistoryFragment resumeHistory = new ResumeHistoryFragment();
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, resumeHistory)
+                        .addToBackStack(null)
+                        .commit();
             });
         }
-        */
         
         // Bouton retour
         if (btnBack != null) {

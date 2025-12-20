@@ -5,6 +5,16 @@
     android:orientation="vertical"
     android:background="@color/fond">
 
+    <Button
+        android:id="@+id/btnSavePdf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Enregistrer en PDF"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#3f51b5"
+        android:padding="12dp" />
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
