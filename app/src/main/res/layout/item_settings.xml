@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Icon Container -->
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp">
+
+            <View
+                android:id="@+id/icon_background"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circle_blue" />
+
+            <ImageView
+                android:id="@+id/icon_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_star_filled"
+                android:tint="#FFFFFF"
+                app:tint="#FFFFFF" />
+
+        </FrameLayout>
+
+        <!-- Title Text -->
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="Settings Item"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <!-- Chevron Arrow -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_chevron_right"
+            android:tint="#FF6B9D"
+            app:tint="#FF6B9D" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
