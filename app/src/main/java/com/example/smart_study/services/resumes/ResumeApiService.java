@@ -69,7 +69,7 @@ public class ResumeApiService {
 
     private static final String ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
     private static final String MODEL = "mistralai/mistral-7b-instruct";
-    private static final String OPENROUTER_API_KEY = "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".trim();
+    private static final String OPENROUTER_API_KEY = "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".trim();
 
     private final OkHttpClient client = new OkHttpClient.Builder()
             .connectTimeout(100, TimeUnit.SECONDS)

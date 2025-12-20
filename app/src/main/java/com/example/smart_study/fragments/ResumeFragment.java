@@ -79,6 +79,7 @@ public class ResumeFragment extends Fragment {
                     ProcessingFragmentResume processingFragment = new ProcessingFragmentResume();
                     Bundle bundle = new Bundle();
                     bundle.putString("pdfUri", String.valueOf(selectedFileUri));
+                    bundle.putString("pdfFileName", selectedFileName);
                     processingFragment.setArguments(bundle);
 
                     requireActivity().getSupportFragmentManager()
