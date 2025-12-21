@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class QcmPlayFragment extends Fragment {
 
     private TextView tvQuestion;
-    private RadioGroup radioGroup;
+    private LinearLayout optionsContainer; // <-- remplace le RadioGroup
     private Button btnNext;
 
     private String[] questions;
@@ -37,7 +37,7 @@ public class QcmPlayFragment extends Fragment {
     public void onViewCreated(@NonNull View v, @Nullable Bundle b) {
 
         tvQuestion = v.findViewById(R.id.tv_question);
-        radioGroup = v.findViewById(R.id.radio_group);
+        optionsContainer = v.findViewById(R.id.radio_group); // on garde le même id pour ne rien casser
         btnNext = v.findViewById(R.id.btn_next);
 
         String json = getArguments() != null
@@ -55,8 +55,6 @@ public class QcmPlayFragment extends Fragment {
         }
 
         loadQuestion();
-
-        btnNext.setOnClickListener(x -> checkAnswer());
     }
 
     private boolean parseQcm(String json) {
@@ -97,47 +95,56 @@ public class QcmPlayFragment extends Fragment {
         }
 
         tvQuestion.setText("Q" + (index + 1) + ". " + questions[index]);
-        radioGroup.removeAllViews();
+        optionsContainer.removeAllViews();
 
         for (int i = 0; i < 4; i++) {
-            RadioButton rb = new RadioButton(getContext());
-            rb.setText(options[index][i]);
-            rb.setId(i);
-            radioGroup.addView(rb);
+            TextView tv = new TextView(getContext());
+            tv.setText(options[index][i]);
+            tv.setTextSize(16f);
+            tv.setPadding(24, 24, 24, 24);
+            tv.setBackgroundResource(R.drawable.option_background); // fond neutre arrondi
+            tv.setTextColor(getResources().getColor(R.color.black));
+            tv.setClickable(true);
+
+            final int selected = i;
+            tv.setOnClickListener(v -> checkAnswer(selected, tv));
+
+            optionsContainer.addView(tv);
         }
 
         btnNext.setText(index == questions.length - 1 ? "Terminer" : "Suivant");
+        btnNext.setEnabled(false); // désactive tant que l'utilisateur n'a pas cliqué
     }
 
-    private void checkAnswer() {
+    private void checkAnswer(int selected, TextView clickedView) {
 
-        int selected = radioGroup.getCheckedRadioButtonId();
-
-        if (selected == -1) {
-            Toast.makeText(getContext(),
-                    "Choisissez une réponse", Toast.LENGTH_SHORT).show();
-            return;
+        // désactive toutes les options
+        for (int i = 0; i < optionsContainer.getChildCount(); i++) {
+            optionsContainer.getChildAt(i).setClickable(false);
         }
 
         if (selected == answers[index]) {
             score++;
-            Toast.makeText(getContext(), "Bonne réponse ✅", Toast.LENGTH_SHORT).show();
+            clickedView.setBackgroundColor(getResources().getColor(R.color.green));
         } else {
-            // Affiche la vraie réponse si l'utilisateur se trompe
-            String correctAnswer = options[index][answers[index]];
-            Toast.makeText(getContext(),
-                    "Mauvaise réponse ❌\nRéponse correcte : " + correctAnswer,
-                    Toast.LENGTH_LONG).show();
+            clickedView.setBackgroundColor(getResources().getColor(R.color.red));
+            // mettre la vraie réponse en vert
+            TextView correctView = (TextView) optionsContainer.getChildAt(answers[index]);
+            correctView.setBackgroundColor(getResources().getColor(R.color.green));
         }
 
-        index++;
-        loadQuestion();
+        btnNext.setEnabled(true);
+        btnNext.setOnClickListener(v -> {
+            index++;
+            loadQuestion();
+        });
     }
 
     private void showResult() {
         tvQuestion.setText("Examen terminé 🎉\nScore : " + score + "/20");
-        radioGroup.setVisibility(View.GONE);
+        optionsContainer.setVisibility(View.GONE);
         btnNext.setText("Retour");
+        btnNext.setEnabled(true);
         btnNext.setOnClickListener(x -> requireActivity().onBackPressed());
     }
 

@@ -8,6 +8,11 @@
     <color name="white">#FFFFFF</color>
     <color name="fond">#CDFFFFFF</color>
 
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+    <color name="black">#000000</color>
+
+
     <!-- Success & Warning Colors -->
     <color name="success_green">#10B981</color>
     <color name="warning_orange">#F59E0B</color>

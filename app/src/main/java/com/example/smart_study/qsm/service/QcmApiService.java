@@ -23,7 +23,7 @@ public class QcmApiService {
 
     // ⚠️ IMPORTANT : DO NOT SHIP TOKEN IN FINAL PROJECT
     private static final String API_KEY =
-            "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";
+            "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";
 
     private static final MediaType JSON
             = MediaType.parse("application/json; charset=utf-8");
